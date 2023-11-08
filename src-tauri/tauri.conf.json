@@ -1,0 +1,42 @@
+{
+  "package": {
+    "productName": "cuttlefish"
+  },
+  "build": {
+    "distDir": "../dist",
+    "devPath": "http://localhost:3000",
+    "beforeDevCommand": "npm run dev:web",
+    "beforeBuildCommand": "npm run build:web"
+  },
+  "tauri": {
+    "bundle": {
+      "active": true,
+      "targets": ["deb", "appimage"],
+      "identifier": "com.stream.cuttlefish",
+      "icon": [
+        "icons/cuttlefish32x32.png",
+        "icons/cuttlefish128x128.png",
+        "icons/cuttlefish256x256.png",
+        "icons/cuttlefish512x512.png"
+      ],
+      "resources": [],
+      "externalBin": [],
+      "category": "audio-visual",
+      "shortDescription": "record and process audio visual",
+      "longDescription": "record visual and audio sources and apply effects",
+      "deb": {
+        "depends": []
+      }
+    },
+    "updater": {
+      "active": false
+    },
+    "allowlist": {
+      "shell": {
+        "open": true
+      }
+    },
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; object-src 'none';"    }
+  }
+}
