@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import MenuBar from './components/MenuBar.svelte'
+  import Button, { Label } from '@smui/button'
 
   let count = 0
   onMount(() => {
@@ -15,26 +16,24 @@
   </div>
 
   <div id="components">
-    <h1>cuttlefish3</h1>
+    <div class="utility">hello1</div>
+
+    <Button touch variant="raised">
+      <Label>Raised</Label>
+    </Button>
+    <h1>cuttlefish</h1>
     <p>Edit <code>src/App.svelte</code> to trigger HMR</p>
     <p>Counter: <code>{count}</code></p>
   </div>
 </div>
 
 <style lang="sass">
-  :global(body)
-    margin: 0
-    padding: 0
-    font-family: Arial, Helvetica, sans-serif
-    font-size: 18px
-    background-color: blue
-    color: #f2f2f2
-    text-align: center
-  
+
   #main-page
     display: flex
     flex-direction: column
     height: 100vh
+    width: 100vw
     margin: 0
     padding: 0
 
@@ -43,6 +42,10 @@
 
   #components
     flex: 1
+
+  .utility
+    height: 25vh
+    background-color: lightgray  
 
   h1
     color: #red
