@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import MenuBar from './components/MenuBar.svelte'
   import Button, { Label } from '@smui/button'
+  import LayoutGrid, { Cell } from '@smui/layout-grid'
 
   let count = 0
   onMount(() => {
@@ -15,12 +16,25 @@
     <MenuBar />
   </div>
 
+  <LayoutGrid>
+    <Cell span={12} style="height: 25vh;">
+      <div class="demo-cell">fdgsdfhg</div>
+    </Cell>
+    <Cell span={12} style="height: 25vh;">
+      <div class="demo-cell">fdhtrtyf445355</div>
+    </Cell>
+    <Cell span={12} style="height: 25vh;">
+      <div class="demo-cell">4545fghfd</div>
+    </Cell>
+  </LayoutGrid>
+
   <div id="components">
     <div class="utility">hello1</div>
 
     <Button touch variant="raised">
       <Label>Raised</Label>
     </Button>
+
     <h1>cuttlefish</h1>
     <p>Edit <code>src/App.svelte</code> to trigger HMR</p>
     <p>Counter: <code>{count}</code></p>
@@ -28,6 +42,10 @@
 </div>
 
 <style lang="sass">
+  .demo-cell
+    width: 100%
+    background-color: red
+  
 
   #main-page
     display: flex
@@ -38,7 +56,7 @@
     padding: 0
 
   #menu
-    height: 10%
+    height: 10vh
 
   #components
     flex: 1
@@ -53,4 +71,5 @@
     background: #282b33
     padding: 2px 5px
     border-radius: 4px
+
 </style>
